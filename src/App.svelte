@@ -1,0 +1,75 @@
+<script>
+import DashBoard from "./DashBoard.svelte";
+import AllTasks from "./AllTasks.svelte"
+    import Drawer from  "./Drawer.svelte"
+import Sidebar from "./Sidebar.svelte";
+    
+
+    let taskDrawer = false;
+    let menuDrawer = false;
+
+    const toogleTaskDrawer = ()=> {
+        taskDrawer = !taskDrawer
+        menuDrawer = false
+    }
+    const toogleMenuDrawer = ()=> {
+        menuDrawer = !menuDrawer
+    }
+    
+</script>
+
+<main class:pageOpac={taskDrawer} >
+    
+    <span 
+    on:click={toogleMenuDrawer}
+    class:lost-btn={menuDrawer} 
+    class="menu-btn" >
+<div></div>
+<div></div>
+<div></div>
+</span>
+<DashBoard {menuDrawer} />
+<Drawer {taskDrawer} on:click={toogleTaskDrawer}  />
+<Sidebar on:addNew={toogleTaskDrawer} {menuDrawer} on:click={toogleMenuDrawer}  />
+<AllTasks {taskDrawer}/>
+</main>
+
+<style>
+    main{
+        height: 100vh;
+        background: rgb(175,174,238);
+    }
+    .pageOpac{
+        background-color: rgba(148, 136, 136, 0.5);
+    }
+    .lost-btn{
+        visibility: hidden;
+    }
+    .menu-btn{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        
+    
+    
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 100%;
+    line-height: 30px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;   
+    
+
+
+    }
+    .menu-btn > div{
+        width: 35px;
+  height: 5px;
+  background-color: crimson;
+  box-shadow: 2px 2px 2px 2px rgba(247, 244, 244, 0.5);
+  margin: 6px 0;
+    }
+    
+</style>
