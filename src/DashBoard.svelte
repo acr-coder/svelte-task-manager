@@ -24,7 +24,7 @@
 
 <style>
     .box{
-        padding: 30px;
+        padding: 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -44,13 +44,17 @@
         
     }
     span{
-        font-size: 30px;
+        font-size: 20px;
         color: #fff;
+        margin-bottom: 5px;
+    }
+    h3{
+        margin-bottom: 0;
     }
     .separate{
         width: 90%;
         height: 5px;
-        background-color: rgb(153, 230, 230);
+        background-color: rgb(151, 158, 158);
         margin: auto;
     }
 

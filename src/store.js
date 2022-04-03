@@ -9,6 +9,46 @@ export const allTasks = writable([
     deadline: "05/04/2022",
     isCompleted:false
   },
+  {
+    id: 2,
+    title: "store dosyaları düzeltilecek",
+    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
+    personel: ["Cenk", "Selin"],
+    deadline: "05/04/2022",
+    isCompleted:true
+  },
+  {
+    id: 3,
+    title: "store dosyaları düzeltilecek",
+    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
+    personel: ["Cenk", "Selin"],
+    deadline: "05/04/2022",
+    isCompleted:false
+  },
+  {
+    id: 4,
+    title: "store dosyaları düzeltilecek",
+    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
+    personel: ["Cenk", "Selin"],
+    deadline: "05/04/2022",
+    isCompleted:true
+  },
+  {
+    id: 5,
+    title: "store dosyaları düzeltilecek",
+    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
+    personel: ["Cenk", "Selin"],
+    deadline: "05/04/2022",
+    isCompleted:false
+  },
+  {
+    id: 6,
+    title: "store dosyaları düzeltilecek",
+    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
+    personel: ["Cenk", "Selin"],
+    deadline: "05/04/2022",
+    isCompleted:true
+  },
 ]);
 
 export const countIncompletedTasks = derived(

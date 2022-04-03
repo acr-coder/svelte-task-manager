@@ -18,6 +18,12 @@
     } else {
       errors.title = "";
     }
+    if (title.length > 30) {
+      valid = false;
+      errors.title = "Task title must be a maximum of 20 characters.";
+    } else {
+      errors.title = "";
+    }
     if (description.trim().length < 5) {
       valid = false;
       errors.description = "Task description must be at least 5 characters";
@@ -63,9 +69,9 @@
 
 {#if taskDrawer}
   <div class="drawer" transition:fly={{ x: 200, duration: 1000 }}>
-    <span class="close-btn" on:click>X</span>
+    <div class="close-btn" on:click>X</div>
     <div class="box">
-      <h1>Add Task</h1>
+      <h3>Add Task</h3>
       <form on:submit|preventDefault={handleSubmit}>
         <input 
         bind:value={title} on:input={()=>errors.title = ''}
@@ -77,7 +83,7 @@
           name=""
           id=""
           cols="10"
-          rows="3"
+          rows="2"
           placeholder="description..."
         />
         <span class="error" >{errors.description}</span>
@@ -110,7 +116,7 @@
     top: 0;
     right: 0;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0;
     width: 40%;
     height: 100vh;
 
@@ -124,12 +130,16 @@
 
   .close-btn {
     margin-left: 10px;
-    font-size: 25px;
-    cursor: pointer;
-    color: rgb(224, 204, 204);
+    width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        background-color: rgba(149, 155, 152,0);
+        text-align: center;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
   }
   .close-btn:hover {
-    color: #fff;
+    background-color: rgba(149, 155, 152,1);;
   }
   .box {
     display: flex;
@@ -173,6 +183,7 @@
     color: red;
     font-size: 9px;
   }
+  
   @media screen and (max-width: 600px) {
     .drawer {
       width: 100%;
