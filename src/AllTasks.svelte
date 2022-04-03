@@ -93,8 +93,8 @@
     }
     .remove{
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 1px;
+        right: 0;
         width: 25px;
         height: 25px;
         border-radius: 100%;

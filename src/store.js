@@ -1,32 +1,7 @@
 import { writable,derived } from "svelte/store";
 import { persistStore } from "./persistStore";
 
-const initial = [
-  {
-    id: 1,
-    title: "store dosyaları düzeltilecek",
-    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
-    personel: ["Cenk", "Selin"],
-    deadline: "05/04/2022",
-    isCompleted:false
-  },
-  {
-    id: 2,
-    title: "store dosyaları düzeltilecek",
-    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
-    personel: ["Cenk", "Selin"],
-    deadline: "05/04/2022",
-    isCompleted:true
-  },
-  {
-    id: 3,
-    title: "store dosyaları düzeltilecek",
-    description: "hfghfh hfghfghf hfhfgh fghfghfg fghfg",
-    personel: ["Cenk", "Selin"],
-    deadline: "05/04/2022",
-    isCompleted:false
-  },
-]
+const initial = []
 
 export const  allTasks = persistStore('data',initial)
 
