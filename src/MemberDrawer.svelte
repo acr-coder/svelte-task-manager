@@ -21,12 +21,7 @@
       } else {
         errors.member = "";
       }
-      if (member.length > 30) {
-        valid = false;
-        errors.member = "member name must be a maximum of 20 characters.";
-      } else {
-        errors.member = "";
-      }
+      
       
   
       if (valid) {
@@ -57,7 +52,7 @@
           <span class="error" >{errors.member}</span>
           
   
-          <button type="submit" >Submit Member</button>
+          <button  type="submit" >Submit Member</button>
         </form>
       </div>
     </div>
@@ -113,15 +108,7 @@
       border-radius: 5px;
       outline: none;
     }
-    .date-box {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .date-box > input {
-      border-radius: 5px;
-      outline: none;
-    }
+    
     form > button {
       border-radius: 5px;
       background-color: crimson;
@@ -132,7 +119,7 @@
     }
     .error{
       color: red;
-      font-size: 9px;
+      font-size: 13px;
     }
     
     @media screen and (max-width: 600px) {

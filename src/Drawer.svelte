@@ -22,12 +22,7 @@
     } else {
       errors.title = "";
     }
-    if (title.length > 30) {
-      valid = false;
-      errors.title = "Task title must be a maximum of 20 characters.";
-    } else {
-      errors.title = "";
-    }
+    
     if (description.trim().length < 5) {
       valid = false;
       errors.description = "Task description must be at least 5 characters";
@@ -184,7 +179,7 @@
   }
   .error{
     color: red;
-    font-size: 9px;
+    font-size: 12px;
   }
   
   @media screen and (max-width: 600px) {
