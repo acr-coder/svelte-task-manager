@@ -2,6 +2,7 @@ import { writable,derived } from "svelte/store";
 import { persistStore } from "./persistStore";
 
 const initial = []
+const memberInitial = ["All Team"]
 
 export const  allTasks = persistStore('data',initial)
 
@@ -67,7 +68,7 @@ export const countCompletedTasks = derived(
     $allTasks => $allTasks.filter((task) =>task.isCompleted === true).length
 )
 
-export const members = writable(["All Team","Cenk","Selin","Murat","Semih","Canan",])
+export const members =  persistStore('members',memberInitial)
 
 export const selectedMember = writable([])
 
