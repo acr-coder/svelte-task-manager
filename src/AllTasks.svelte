@@ -61,7 +61,7 @@
     .card{
         position: relative;
         box-sizing: border-box;
-        max-width: 200px;
+        max-width: 250px;
         display: flex;
         flex-direction: column;
         padding: 5px 15px;
@@ -106,4 +106,10 @@
     .remove:hover{
         background-color: rgba(149, 155, 152,1);
     }
+	
+	@media screen and (max-width: 600px) {
+	.card {
+    width: 90%;
+  }
+}
 </style>
