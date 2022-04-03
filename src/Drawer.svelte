@@ -1,6 +1,9 @@
 <script>
-  import { allTasks } from "./store";
+  import { allTasks, members } from "./store";
   import { fly } from "svelte/transition";
+  import { createEventDispatcher } from "svelte"
+
+  const dispatch = createEventDispatcher();
   export let taskDrawer;
 
   let title;
@@ -9,6 +12,7 @@
   let deadline;
   let valid = false;
   let errors = { title: "", description: "", personel: "", deadline: "" };
+  
 
   const handleSubmit = () => {
     valid = true;
@@ -61,6 +65,8 @@
       description=''
       personel=[]
       deadline=''
+
+      dispatch('taskAdded')
     }
 
     
@@ -90,12 +96,11 @@
         <select name="" id="" multiple
         on:input={()=>errors.personel = ''}
          bind:value={personel}>
-          <option value="All-team">All team</option>
-          <option value="Cenk">Cenk</option>
-          <option value="Selin">Selin</option>
-          <option value="Murat">Murat</option>
-          <option value="Semih">Semih</option>
-          <option value="Canan">Canan</option>
+         {#each $members as member (member)}
+           <option value={member}>{member}</option>
+         {/each}
+          
+          
         </select>
         <span class="error" >{errors.personel}</span>
         <div class="date-box">
@@ -148,9 +153,7 @@
     align-items: center;
   }
 
-  h1 {
-    text-align: center;
-  }
+  
   form {
     width: 80%;
     display: flex;

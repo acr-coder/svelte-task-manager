@@ -54,7 +54,7 @@
     .separate{
         width: 90%;
         height: 5px;
-        background-color: rgb(151, 158, 158);
+        background-color: rgb(226, 163, 81);
         margin: auto;
     }
 

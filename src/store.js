@@ -61,3 +61,7 @@ export const countCompletedTasks = derived(
     $allTasks => $allTasks.filter((task) =>task.isCompleted === true).length
 )
 
+export const members = writable(["All Team","Cenk","Selin","Murat","Semih","Canan"])
+
+export const selectedMember = writable('')
+

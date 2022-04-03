@@ -2,7 +2,9 @@
     import {allTasks} from "./store"
     import { fade,slide, scale } from 'svelte/transition';
     import { flip } from 'svelte/animate'
+    
     export let taskDrawer;
+    export let menuDrawer;
 
     const handleComplete = (id)=> {
        allTasks.update(currentTasks => {
@@ -23,7 +25,7 @@
 
 </script>
 
-{#if taskDrawer === false}
+{#if taskDrawer === false & menuDrawer === false}
     <div class="task-box">
     {#each $allTasks as task (task.id)}
     <div 

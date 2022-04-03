@@ -29,9 +29,9 @@ import Sidebar from "./Sidebar.svelte";
 <div></div>
 </span>
 <DashBoard {menuDrawer} />
-<Drawer {taskDrawer} on:click={toogleTaskDrawer}  />
+<Drawer {taskDrawer} on:click={toogleTaskDrawer} on:taskAdded={toogleTaskDrawer}  />
 <Sidebar on:addNew={toogleTaskDrawer} {menuDrawer} on:click={toogleMenuDrawer}  />
-<AllTasks {taskDrawer}/>
+<AllTasks {taskDrawer} {menuDrawer}/>
 </main>
 
 <style>
