@@ -2,6 +2,7 @@
   import { allTasks, members } from "./store";
   import { fly } from "svelte/transition";
   import { createEventDispatcher } from "svelte"
+import AllTasks from "./AllTasks.svelte";
 
   const dispatch = createEventDispatcher();
   export let taskDrawer;
@@ -53,9 +54,11 @@
         isCompleted:false
       };
       console.log(newTask);
+
       allTasks.update(currentTasks => {
         return[newTask, ...currentTasks]
       })
+      
       title='';
       description=''
       personel=[]
@@ -120,12 +123,8 @@
     width: 40%;
     height: 100vh;
 
-    background: rgb(238, 174, 202);
-    background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-    );
+    background: rgb(192, 20, 94);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgb(36, 107, 189) 100%);
   }
 
   .close-btn {
