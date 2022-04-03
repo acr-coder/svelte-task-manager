@@ -5,6 +5,7 @@
     
     export let taskDrawer;
     export let menuDrawer;
+    export let memberDrawer;
 
     const handleComplete = (id)=> {
        allTasks.update(currentTasks => {
@@ -25,7 +26,7 @@
 
 </script>
 
-{#if taskDrawer === false & menuDrawer === false}
+{#if taskDrawer === false & menuDrawer === false & memberDrawer===false}
     <div class="task-box">
     {#each $allTasks as task (task.id)}
     <div 

@@ -3,10 +3,12 @@ import DashBoard from "./DashBoard.svelte";
 import AllTasks from "./AllTasks.svelte"
     import Drawer from  "./Drawer.svelte"
 import Sidebar from "./Sidebar.svelte";
+import MemberDrawer from "./MemberDrawer.svelte";
     
 
     let taskDrawer = false;
     let menuDrawer = false;
+    let memberDrawer = false
 
     const toogleTaskDrawer = ()=> {
         taskDrawer = !taskDrawer
@@ -14,6 +16,11 @@ import Sidebar from "./Sidebar.svelte";
     }
     const toogleMenuDrawer = ()=> {
         menuDrawer = !menuDrawer
+    }
+    const toogleMemberDrawer = () => {
+        memberDrawer = !memberDrawer
+        menuDrawer=false
+        taskDrawer=false
     }
     
 </script>
@@ -30,8 +37,9 @@ import Sidebar from "./Sidebar.svelte";
 </span>
 <DashBoard {menuDrawer} />
 <Drawer {taskDrawer} on:click={toogleTaskDrawer} on:taskAdded={toogleTaskDrawer}  />
-<Sidebar on:addNew={toogleTaskDrawer} {menuDrawer} on:click={toogleMenuDrawer}  />
-<AllTasks {taskDrawer} {menuDrawer}/>
+<Sidebar on:addNewTask={toogleTaskDrawer} on:addNewMember={toogleMemberDrawer} {menuDrawer} on:click={toogleMenuDrawer}  />
+<MemberDrawer {memberDrawer} on:memberAdded={toogleMemberDrawer} on:click={toogleMemberDrawer} />
+<AllTasks {taskDrawer} {menuDrawer} {memberDrawer}/>
 </main>
 
 <style>
